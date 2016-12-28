@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/type_spinner"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            <TextView
+            android:id="@+id/tv_label_blood"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Blood Pressure" />
+            <View
+                android:layout_margin="2dp"
+                android:background="@color/wallet_dim_foreground_disabled_holo_dark"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <RadioGroup
+                android:id="@+id/rg_blood"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_blood_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low"/>
+                <RadioButton android:id="@+id/radio_blood_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"/>
+                <RadioButton android:id="@+id/radio_blood_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High"/>
+            </RadioGroup>
+
+
+
+            <TextView
+                android:id="@+id/tv_label_temperature"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Temperature" />
+            <View
+                android:layout_margin="2dp"
+                android:background="@color/wallet_dim_foreground_disabled_holo_dark"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <RadioGroup
+                android:id="@+id/rg_temp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton android:id="@+id/radio_temperature_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low"/>
+                <RadioButton android:id="@+id/radio_temperature_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"/>
+                <RadioButton android:id="@+id/radio_temperature_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High"/>
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/tv_label_breathing"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Breathing" />
+            <View
+                android:layout_margin="2dp"
+                android:background="@color/wallet_dim_foreground_disabled_holo_dark"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <RadioGroup
+                android:id="@+id/rg_breath"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_breathing_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low"/>
+                <RadioButton android:id="@+id/radio_breathing_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"/>
+                <RadioButton android:id="@+id/radio_breathing_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High"/>
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/tv_label_pulse"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Pulse" />
+            <View
+                android:layout_margin="2dp"
+                android:background="@color/wallet_dim_foreground_disabled_holo_dark"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <RadioGroup
+                android:id="@+id/rg_pulse"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/radio_pulse_rate_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low"/>
+                <RadioButton android:id="@+id/radio_pulse_rate_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"/>
+                <RadioButton android:id="@+id/radio_pulse_rate_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High"/>
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:onClick="next"
+        android:text="Next"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

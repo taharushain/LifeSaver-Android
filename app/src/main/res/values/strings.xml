@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Life Saver</string>
+    <string-array name="request_type_array">
+        <item>Cardiac arrest</item>
+        <item>Heart attack</item>
+        <item>Trauma</item>
+        <item>Mental illness</item>
+        <item>Accident</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>

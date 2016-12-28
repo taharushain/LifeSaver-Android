@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright (c) 2016. Golemtron.com
+  ~ Designed and Developed by Taha Rushain
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/hospital_item_background"
+    android:elevation="2dp">
+
+
+    <TextView
+        android:text="TextView"
+        android:paddingTop="@dimen/hospital_item_padding_vertical"
+        android:paddingBottom="@dimen/hospital_item_padding_vertical"
+        android:paddingLeft="@dimen/hospital_item_padding_horizontal"
+        android:paddingRight="@dimen/hospital_item_padding_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/tv_hospital"
+        android:maxLines="1"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright (c) 2016. Golemtron.com
+  ~ Designed and Developed by Taha Rushain
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/miLogoff"
+        android:icon="@android:drawable/ic_lock_power_off"
+        app:showAsAction="always"
+        android:title="Log Out">
+    </item>
+    <!--<item-->
+        <!--android:id="@+id/miProfile"-->
+        <!--android:icon="@android:drawable/ic_secure"-->
+        <!--app:showAsAction="ifRoom|withText"-->
+        <!--android:title="Profile">-->
+    <!--</item>-->
+</menu>
