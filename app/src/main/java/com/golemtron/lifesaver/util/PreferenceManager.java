@@ -40,6 +40,7 @@ public class PreferenceManager {
 
     private static final String KEY_REQ_ID = "req_id";
     private static final String KEY_TYPE = "req_type";
+    private static final String KEY_CONDITION = "req_condition";
     private static final String KEY_BLOOD = "req_blood";
     private static final String KEY_TEMPERATURE = "req_temperature";
     private static final String KEY_BREATHING = "req_breathing";
@@ -83,9 +84,11 @@ public class PreferenceManager {
         editor.remove(KEY_HOSPITAL_LONGITUDE);
         editor.remove(KEY_HOSPITAL_LATITUDE);
         editor.remove(KEY_HOSPITAL_NAME);
+        editor.remove(KEY_CONDITION);
 
         editor.apply();
     }
+    public boolean getPatientCondition(){return pref.getBoolean(KEY_CONDITION,false);}
     public String getPatientType(){return pref.getString(KEY_TYPE,"");}
     public String getPatientBlood(){return pref.getString(KEY_BLOOD,"");}
     public String getPatientBreathing(){return pref.getString(KEY_BREATHING,"");}
@@ -228,4 +231,9 @@ public class PreferenceManager {
     }
 
     public int getRequestId(){return pref.getInt(KEY_REQ_ID,-1);}
+
+    public void addPatientCondition(boolean cond) {
+        editor.putBoolean(KEY_CONDITION, cond);
+        editor.commit();
+    }
 }

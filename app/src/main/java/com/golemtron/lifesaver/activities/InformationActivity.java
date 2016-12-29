@@ -35,7 +35,7 @@ public class InformationActivity extends AppCompatActivity {
 
 
     private Spinner type_spinner;
-    private RadioGroup rg_blood, rg_temp, rg_pulse, rg_breath;
+    private RadioGroup rg_cond, rg_blood, rg_temp, rg_pulse, rg_breath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class InformationActivity extends AppCompatActivity {
         rg_temp = (RadioGroup) findViewById(R.id.rg_temp);
         rg_pulse = (RadioGroup) findViewById(R.id.rg_pulse);
         rg_breath = (RadioGroup) findViewById(R.id.rg_breath);
+        rg_cond = (RadioGroup) findViewById(R.id.rg_cond);
 
 
     }
@@ -120,6 +121,10 @@ public class InformationActivity extends AppCompatActivity {
 
         String msg = "All fields are required\n";
         Boolean error = false;
+        if(rg_cond.getCheckedRadioButtonId() == -1){
+            error=true;
+            msg+=" Condition,";
+        }
         if(rg_blood.getCheckedRadioButtonId() == -1){
             error=true;
             msg+=" Blood,";
@@ -149,13 +154,17 @@ public class InformationActivity extends AppCompatActivity {
         String pulse = ((RadioButton)findViewById(rg_pulse.getCheckedRadioButtonId())).getText().toString().trim();
         String temp = ((RadioButton)findViewById(rg_temp.getCheckedRadioButtonId())).getText().toString().trim();
         String breath = ((RadioButton)findViewById(rg_breath.getCheckedRadioButtonId())).getText().toString().trim();
+        String condition = ((RadioButton)findViewById(rg_cond.getCheckedRadioButtonId())).getText().toString().trim();
 
+        boolean cond = false;
+        if(condition.equals("Critical"))cond=true;
 
         preferenceManager.addPatientType(type);
         preferenceManager.addPatientTemperature(temp);
         preferenceManager.addPatientPulse(pulse);
         preferenceManager.addPatientBreathing(breath);
         preferenceManager.addPatientBlood(blood);
+        preferenceManager.addPatientCondition(cond);
 
         Intent intent = new Intent(InformationActivity.this, SelectHospitalActivity.class);
         startActivity(intent);

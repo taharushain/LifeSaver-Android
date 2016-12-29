@@ -315,7 +315,8 @@ public class SelectHospitalActivity extends AppCompatActivity implements GoogleA
                 preferenceManager.getPatientPulse(),
                 latitude+"",
                 longitude+"",
-                radius+""
+                radius+"",
+                preferenceManager.getPatientCondition()
                 );
     }
 
@@ -579,7 +580,8 @@ public class SelectHospitalActivity extends AppCompatActivity implements GoogleA
                                 final String pulse_rate,
                                 final String latitude,
                                 final String longitude,
-                                final String radius
+                                final String radius,
+                                final boolean cond
                                 ) {
 
         showpDialog();
@@ -650,6 +652,7 @@ public class SelectHospitalActivity extends AppCompatActivity implements GoogleA
                 parameters.put("latitude",latitude);
                 parameters.put("longitude",longitude);
                 parameters.put("radius",radius);
+                parameters.put("critical_condition",cond+"");
 
                 return parameters;
             }

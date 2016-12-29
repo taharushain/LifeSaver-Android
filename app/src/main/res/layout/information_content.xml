@@ -24,6 +24,35 @@
                 android:layout_height="wrap_content"></Spinner>
 
             <TextView
+                android:id="@+id/tv_label_condition"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Condition" />
+            <View
+                android:layout_margin="2dp"
+                android:background="@color/wallet_dim_foreground_disabled_holo_dark"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <RadioGroup
+                android:id="@+id/rg_cond"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton android:id="@+id/radio_condition_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"/>
+                <RadioButton android:id="@+id/radio_condition_critical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Critical"/>
+            </RadioGroup>
+
+            <TextView
             android:id="@+id/tv_label_blood"
             android:layout_width="match_parent"
             android:gravity="center"
