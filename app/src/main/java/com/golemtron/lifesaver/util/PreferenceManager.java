@@ -50,8 +50,9 @@ public class PreferenceManager {
     private static final String KEY_COMPLETED = "req_completed";
     private static final String KEY_REQUEST_SENT = "req_sent";
 
-    private static final String KEY_HOSPITAL_LONGITUDE = "hospital_longitude";
-    private static final String KEY_HOSPITAL_LATITUDE = "hospital_latitude";
+//    private static final String KEY_HOSPITAL_LONGITUDE = "hospital_longitude";
+//    private static final String KEY_HOSPITAL_LATITUDE = "hospital_latitude";
+    private static final String KEY_HOSPITAL_ADDRESS = "hospital_address";
     private static final String KEY_HOSPITAL_NAME = "hospital_name";
 
 
@@ -81,8 +82,8 @@ public class PreferenceManager {
         editor.remove(KEY_ACCEPTED);
         editor.remove(KEY_COMPLETED);
         editor.remove(KEY_REQUEST_SENT);
-        editor.remove(KEY_HOSPITAL_LONGITUDE);
-        editor.remove(KEY_HOSPITAL_LATITUDE);
+//        editor.remove(KEY_HOSPITAL_LONGITUDE);
+        editor.remove(KEY_HOSPITAL_ADDRESS);
         editor.remove(KEY_HOSPITAL_NAME);
         editor.remove(KEY_CONDITION);
 
@@ -203,13 +204,18 @@ public class PreferenceManager {
     }
 
 
-    public void setHospitalLongitude(double hospitalLongitude) {
-        editor.putFloat(KEY_HOSPITAL_LONGITUDE, (float) hospitalLongitude);
-        editor.commit();
-    }
+//    public void setHospitalLongitude(String hospitalLongitude) {
+//        editor.putString(KEY_HOSPITAL_LONGITUDE, hospitalLongitude);
+//        editor.commit();
+//    }
+//
+//    public void setHospitalLatitude(String hospitalLatitude) {
+//        editor.putString(KEY_HOSPITAL_LATITUDE, hospitalLatitude);
+//        editor.commit();
+//    }
 
-    public void setHospitalLatitude(double hospitalLatitude) {
-        editor.putFloat(KEY_HOSPITAL_LATITUDE, (float) hospitalLatitude);
+    public void setKeyHospitalAddress(String hospit) {
+        editor.putString(KEY_HOSPITAL_ADDRESS, hospit);
         editor.commit();
     }
 
@@ -222,13 +228,29 @@ public class PreferenceManager {
         return pref.getString(KEY_HOSPITAL_NAME,"");
     }
 
-    public float getHospitalLongitude() {
-        return pref.getFloat(KEY_HOSPITAL_LONGITUDE, 0);
+    public String getKeyHospitalAddress() {
+        return pref.getString(KEY_HOSPITAL_ADDRESS,"-1");
     }
 
-    public float getHospitalLatitude() {
-        return pref.getFloat(KEY_HOSPITAL_LATITUDE, 0);
-    }
+//    public double getHospitalLongitude() {
+//        try {
+//            double n = new Double(pref.getString(KEY_HOSPITAL_LONGITUDE, "-1").trim());
+//            return n;
+//        } catch (NumberFormatException e) {
+//            double n = -1; // your default value
+//            return n;
+//        }
+//    }
+//
+//    public double getHospitalLatitude() {
+//        try {
+//            double n = new Double(pref.getString(KEY_HOSPITAL_LATITUDE, "-1").trim());
+//            return n;
+//        } catch (NumberFormatException e) {
+//            double n = -1; // your default value
+//            return n;
+//        }
+//    }
 
     public int getRequestId(){return pref.getInt(KEY_REQ_ID,-1);}
 

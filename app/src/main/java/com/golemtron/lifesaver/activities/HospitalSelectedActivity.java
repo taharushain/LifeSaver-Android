@@ -200,7 +200,7 @@ public class HospitalSelectedActivity extends AppCompatActivity implements OnMap
 //
 //                mapFragment.getMapAsync(this);
 
-                destination = preferenceManager.getHospitalLatitude()+","+preferenceManager.getHospitalLongitude();
+                destination = preferenceManager.getKeyHospitalAddress();
                 Log.d("HSS destination:", ""+destination);
 
                 sendRequest();
@@ -316,13 +316,16 @@ public class HospitalSelectedActivity extends AppCompatActivity implements OnMap
                             db.setRequestAccepted(pr.getId(), pr.getBed_id(), pr.getHospital_id());
                             preferenceManager.addReqID(pr.getId());
                             preferenceManager.setRequestAccepted(true);
-                            double hospital_latitude = jsonObjectHospital.getDouble("latitude");
-                            double hospital_longitude = jsonObjectHospital.getDouble("longitude");
+//                            String hospital_latitude = jsonObjectHospital.getString("latitude");
+//                            String hospital_longitude = jsonObjectHospital.getString("longitude");
+                            String hospital_address = jsonObjectHospital.getString("address");
                             String hospital_name = jsonObjectHospital.getString("name");
-                            Log.d("HSS longitude:", "" + hospital_longitude);
-                            Log.d("HSS latitude :", "" + hospital_latitude);
-                            preferenceManager.setHospitalLatitude(hospital_latitude);
-                            preferenceManager.setHospitalLongitude(hospital_longitude);
+                            Log.d("HSS Address:", "" + hospital_address);
+//                            Log.d("HSS latitude :", "" + hospital_latitude);
+//                            preferenceManager.setHospitalLatitude(hospital_latitude);
+//                            preferenceManager.setHospitalLongitude(hospital_longitude);
+                            preferenceManager.setKeyHospitalAddress(hospital_address);
+
                             preferenceManager.setHospitalname(hospital_name);
                             requestAccepted();
                         }
@@ -668,7 +671,9 @@ public class HospitalSelectedActivity extends AppCompatActivity implements OnMap
     private void sendRequest() {
         Log.d("sendRequest","in");
         String origin = mLatitude+","+mLongitude;
-        String destination = preferenceManager.getHospitalLatitude()+","+preferenceManager.getHospitalLongitude();
+        if(preferenceManager.getKeyHospitalAddress()=="-1")
+            return;
+        String destination = preferenceManager.getKeyHospitalAddress();
 
         try {
             new DirectionFinder(this, origin, destination).execute();
