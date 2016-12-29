@@ -10,7 +10,8 @@ package com.golemtron.lifesaver.util;
  */
 public class Constants {
 
-    private static final String url = "https://lifesaver-taharushain.c9users.io/";
+//    private static final String url = "https://lifesaver-taharushain.c9users.io/";
+    private static final String url ="http://54.191.38.65/";
     public static final String TABLE_AMB_USER = "ambulance_user";
     public static final String KEY_ID = "amb_id";
     public static final String KEY_NAME = "name";
